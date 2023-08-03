@@ -5,27 +5,23 @@ import { works } from "./data.js";
  const $proyects = d.querySelector(".proyectsContainer"),
  $template = d.getElementById("templateCard").content,
  $fragment = d.createDocumentFragment(),
+ $leftBtn = d.querySelector(".proyectsLeftBtn"),
+ $rightBtn = d.querySelector(".proyectsRightBtn"),
  itemsPerPage = 6,
  worksQuantity = works.length;
 
- let pageNumber = 1;
+ let pageNumber = 1,
+ leftArrowVisible = false,
+ rightArrowVisible = false;
+
+
  d.addEventListener("click", e => {
    let $svg = e.target.parentElement;
    if($svg.matches(".proyectsLeftBtn")){
-
-      if(pageNumber === 1){
-         return;
-      }else{
-         pageNumber--;
-         renderPage();
-      }
+      pageNumber--;
+      renderPage();
    }
    else if($svg.matches(".proyectsRightBtn")){
-      let minimunCardsRequiredToRender = ((pageNumber)*(itemsPerPage-1))+(pageNumber+1);
-
-      if(!(worksQuantity >= minimunCardsRequiredToRender)){
-         return;
-      }
       pageNumber++;
       renderPage();
    }
@@ -36,7 +32,11 @@ import { works } from "./data.js";
       const startIndex = (pageNumber - 1) * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
       const currentWorks = works.slice(startIndex, endIndex);
-    
+      const minimunCardsRequiredToRender = ((pageNumber)*(itemsPerPage-1))+(pageNumber+1);
+
+      pageNumber === 1 ? leftArrowVisible = false : leftArrowVisible = true;
+      worksQuantity >= minimunCardsRequiredToRender ? rightArrowVisible = true : rightArrowVisible = false;
+
       $proyects.innerHTML = "";
     
       currentWorks.forEach((work, index) => {
@@ -51,6 +51,10 @@ import { works } from "./data.js";
       });
    
       $proyects.appendChild($fragment);
+
+      leftArrowVisible ? $leftBtn.classList.remove("elementHidden") : $leftBtn.classList.add("elementHidden");
+      rightArrowVisible ? $rightBtn.classList.remove("elementHidden") : $rightBtn.classList.add("elementHidden");
+
    }
 
    renderPage();
