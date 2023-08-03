@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav class="menu sideNav">
+            <div class="menuIcons">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                class="svg-snoweb svg-theme-light"
+                x="0"
+                y="0"
+                width="100%"
+                height="100%"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid meet"
+                >
+                <defs>
+                <style>
+                .svg-fill-primary {
+                    fill: #090D49;
+                }
+
+                .svg-fill-secondary {
+                    fill: #65CDAE;
+                }
+
+                .svg-fill-tertiary {
+                    fill: #E5E7EB;
+                }
+
+                .svg-stroke-primary {
+                    stroke: red;
+                }
+
+                .svg-stroke-secondary {
+                    stroke: #65CDAE;
+                }
+
+                .svg-stroke-tertiary {
+                    stroke: #E5E7EB;
+                }
+                </style>
+                </defs>
+                <path d="M13.4,50l8.1-8.1m0,0L50,13.4,78.5,41.9m-57,0V82.6a4,4,0,0,0,4.1,4H37.8M78.5,41.9,86.6,50m-8.1-8.1V82.6a4,4,0,0,1-4.1,4H62.2m-24.4,0a4.1,4.1,0,0,0,4.1-4V66.3a4,4,0,0,1,4-4.1h8.2a4,4,0,0,1,4,4.1V82.6a4.1,4.1,0,0,0,4.1,4m-24.4,0H62.2"
+                    fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+
+                </svg>
+            </div>
+            <div class="menuLinks">
+                <a href="#inicio">INICIO</a>
+                <a href="#proyectos">PROYECTOS</a>
+                <a href="#acerca">SOBRE MI</a>
+                <a href="#contacto">CONTACTAME</a>
+            </div>
+        </nav>
+        <section id="inicio" class="home mainSection">
+            <article class="homeText">
+                <h5>Hola, soy</h5>
+                <h2>
+                    ANDRES CAMARGO
+                </h2>
+                <h3>Y desarrollo soluciones</h2>
+                <h1>FULL-STACK</h1>
+                <button class="btn">DESCARGAR RESUMEN</button>
+            </article>
+            <img src="assets/avatar.png" alt="avatar">
+        </section>
+        <section id="proyectos" class="proyects mainSection">
+            <article class="proyectsContainer">
+                <template id="templateCard">
+                    <div class="card">
+                        <img src="" alt="">
+                        <h3></h3>
+                        <p></p>
+                        <button class="btn">Explorar</button>
+                    </div>
+                </template>
+            </article>
+            <svg class="proyectsLeftBtn arrow svg-snoweb svg-theme-light" height="100" preserveaspectratio="xMidYMid meet" viewbox="0 0 100 100" width="100" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+                <polygon fill="currentColor" points="0 50 100 0 100 100 0 50">
+                </polygon>
+            </svg>   
+            <svg class="proyectsRightBtn arrow svg-snoweb svg-theme-light" height="100" preserveaspectratio="xMidYMid meet" viewbox="0 0 100 100" width="100" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+                <polygon fill="currentColor" points="100 50 0 0 0 100 100 50">
+                </polygon>
+            </svg>    
+        </section>
+
+<script src="data.js" type="module"></script>        
+<script src="script.js" type="module"></script>        
+</body>
+</html>
