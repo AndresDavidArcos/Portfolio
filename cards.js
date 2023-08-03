@@ -39,12 +39,13 @@ import { works } from "./data.js";
     
       $proyects.innerHTML = "";
     
-      currentWorks.forEach((work) => {
+      currentWorks.forEach((work, index) => {
         $template.querySelector("img").setAttribute("src", work.img);
         $template.querySelector("img").setAttribute("alt", work.title);
         $template.querySelector("h3").textContent = work.title;
         $template.querySelector("p").textContent = work.description;
-    
+        $template.querySelector(".cardNumber").textContent = `${startIndex+index+1}/${worksQuantity}`;
+
         let $clone = d.importNode($template, true);
         $fragment.appendChild($clone);
       });

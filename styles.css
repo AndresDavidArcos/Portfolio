@@ -3,6 +3,9 @@
   /* --first-color: rgb(255,186,49);
   --first-alpha-color: rgb(255,186,49, 0.75); */
   --first-color: rgb(208, 71,47);
+  --first-color-smooth-1: rgb(255, 214, 201);
+  --first-color-smooth-2: rgb(255, 171, 157);
+  --first-color-smooth-3: rgb(255, 129, 114);
   --fisrt-alpha-color: rgba(208, 71,47,0.75);
   --second-color: rgb(70,61,178);
   --second-alpha-color: rgba(70,61,178, 0.75);
@@ -173,11 +176,16 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.726);
   width: 80%;
   height: 95%;
+  position: relative;
 
 }
 
 .card img {
   border-radius: 2rem;
+}
+
+.card h3{
+  color: var(--first-color-smooth-3);
 }
 
 .card p {
@@ -194,6 +202,14 @@ p {
   width: 60%;
   height: 50px;
   padding: 0.75rem;
+}
+
+.cardNumber {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--first-color-smooth-2);
+  font-weight: bold;
 }
 
 
@@ -225,6 +241,11 @@ p {
   text-decoration: none;
   color: var(--black-color);
   background-color: var(--gray-light-color);
+}
+
+.elementHidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 
@@ -261,8 +282,13 @@ p {
   width: 2rem;
   height: 4rem;
   position: absolute;
-  cursor: pointer;
   color: var(--first-color);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.arrow > polygon{
+  cursor: pointer;
 }
 
 .proyectsLeftBtn {
