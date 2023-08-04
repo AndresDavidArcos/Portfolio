@@ -237,7 +237,7 @@ p {
 .modal-content {
   position: relative;
   display: grid;
-  grid-template-columns: 50% 40% 10%;
+  grid-template-columns: 60% 40%;
   width: 80%;
   height: 80%;
   background-color: antiquewhite;
@@ -255,9 +255,6 @@ p {
   fill: var(--first-color);
 }
 
-.modal img {
-  width: 50%;  
-}
 
 
 
