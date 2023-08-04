@@ -7,6 +7,7 @@ import { works } from "./data.js";
  $fragment = d.createDocumentFragment(),
  $leftBtn = d.querySelector(".proyectsLeftBtn"),
  $rightBtn = d.querySelector(".proyectsRightBtn"),
+ $exploreBtn = d.querySelector('.proyectsExploreBtn'),
  itemsPerPage = 6,
  worksQuantity = works.length;
 
@@ -16,12 +17,20 @@ import { works } from "./data.js";
 
 
  d.addEventListener("click", e => {
-   let $svg = e.target.parentElement;
-   if($svg.matches(".proyectsLeftBtn")){
+
+   let $parent = e.target.parentElement;
+
+   if($parent.matches(".proyectsCard")){
+      let $modal = $parent.nextElementSibling;
+      $modal.classList.remove("elementHidden");
+   }
+
+   if($parent.matches(".proyectsLeftBtn")){
       pageNumber--;
       renderPage();
    }
-   else if($svg.matches(".proyectsRightBtn")){
+
+   if($parent.matches(".proyectsRightBtn")){
       pageNumber++;
       renderPage();
    }
@@ -40,11 +49,34 @@ import { works } from "./data.js";
       $proyects.innerHTML = "";
     
       currentWorks.forEach((work, index) => {
+
+      const cardId = startIndex+index+1;
+      $template.querySelector(".card").setAttribute("data-key", cardId);
+
+      // FRONT CARD
         $template.querySelector("img").setAttribute("src", work.img);
         $template.querySelector("img").setAttribute("alt", work.title);
         $template.querySelector("h3").textContent = work.title;
         $template.querySelector("p").textContent = work.description;
-        $template.querySelector(".cardNumber").textContent = `${startIndex+index+1}/${worksQuantity}`;
+        $template.querySelector(".cardNumber").textContent = `${cardId}/${worksQuantity}`;
+
+      //   MODAL CARND
+        const $templateModal = $template.querySelector(".modal");
+        $templateModal.querySelector("img").setAttribute("src", work.gif || work.img);
+        $templateModal.querySelector("img").setAttribute("alt", work.title);
+        $templateModal.querySelector("h3").textContent = work.title;
+        $templateModal.querySelector("p").textContent = work.description;
+
+        const $technologies = $templateModal.querySelector(".modalTechnologies")
+
+        const technologies = work.technologies;
+
+         technologies && technologies.forEach((tech)=>{
+         let $tag = d.createElement("p");
+         $tag.textContent = tech;
+         $technologies.appendChild($tag);
+        })
+
 
         let $clone = d.importNode($template, true);
         $fragment.appendChild($clone);

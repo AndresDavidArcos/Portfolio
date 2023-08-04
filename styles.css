@@ -1,7 +1,6 @@
 /* ********** Custom Properties ********** */
 :root {
-  /* --first-color: rgb(255,186,49);
-  --first-alpha-color: rgb(255,186,49, 0.75); */
+
   --first-color: rgb(208, 71,47);
   --first-color-smooth-1: rgb(255, 214, 201);
   --first-color-smooth-2: rgb(255, 171, 157);
@@ -193,6 +192,13 @@ p {
   font-size: 0.80rem;
   line-height: 1.25;
   margin: 0.75rem 2rem;
+  min-height: 65px;
+  max-height: 65px;
+  max-width: 200px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .card > button {
@@ -211,6 +217,49 @@ p {
   color: var(--first-color-smooth-2);
   font-weight: bold;
 }
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+  transition: all 1s;
+}
+
+.modal-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 40% 10%;
+  width: 80%;
+  height: 80%;
+  background-color: antiquewhite;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal-close svg {
+  width: 3rem;
+  height: 3rem;
+  fill: var(--first-color);
+}
+
+.modal img {
+  width: 50%;  
+}
+
+
 
 
 
@@ -248,13 +297,19 @@ p {
   pointer-events: none;
 }
 
+.none {
+  display: none;
+}
+
+.debug {
+  border: thin solid red;
+}
+
 
 /* ********** Site Style ********** */
 
 .home {
     background-color: var(--black-color);
-    /* background-color: var(--third-color); */
-
 }
 
 .proyects {
