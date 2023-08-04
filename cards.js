@@ -20,9 +20,20 @@ import { works } from "./data.js";
 
    let $parent = e.target.parentElement;
 
-   if($parent.matches(".proyectsCard")){
+   if($parent.matches(".proyectsCard") && e.target.matches(".proyectsExploreBtn")){
       let $modal = $parent.nextElementSibling;
+      let $gif = $modal.querySelector("img");
+      const gifUrl = $gif.getAttribute("data-src");
+      if (gifUrl != "undefined") {
+         $gif.setAttribute("src", gifUrl);
+       }
+       
       $modal.classList.remove("elementHidden");
+   }
+
+   if(e.target.matches(".modal-close-interaction")){
+      let $modal = e.target.closest(".modal");
+      $modal.classList.add("elementHidden");
    }
 
    if($parent.matches(".proyectsLeftBtn")){
@@ -60,9 +71,10 @@ import { works } from "./data.js";
         $template.querySelector("p").textContent = work.description;
         $template.querySelector(".cardNumber").textContent = `${cardId}/${worksQuantity}`;
 
-      //   MODAL CARND
+      //   MODAL CARD
         const $templateModal = $template.querySelector(".modal");
-        $templateModal.querySelector("img").setAttribute("src", work.gif || work.img);
+        $templateModal.querySelector("img").setAttribute("src", work.img);
+        $templateModal.querySelector("img").setAttribute("data-src", work.gif);
         $templateModal.querySelector("img").setAttribute("alt", work.title);
         $templateModal.querySelector("h3").textContent = work.title;
         $templateModal.querySelector("p").textContent = work.description;

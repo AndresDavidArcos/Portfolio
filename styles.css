@@ -231,7 +231,7 @@ p {
   justify-content: center;
   align-items: center;
   background-color: var(--black-alpha-color);
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .modal-content {
@@ -247,6 +247,7 @@ p {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  cursor: pointer;
 }
 
 .modal-close svg {
@@ -254,8 +255,6 @@ p {
   height: 3rem;
   fill: var(--first-color);
 }
-
-
 
 
 
