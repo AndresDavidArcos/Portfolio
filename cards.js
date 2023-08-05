@@ -60,19 +60,21 @@ import { works } from "./data.js";
       $proyects.innerHTML = "";
     
       currentWorks.forEach((work, index) => {
-
+      
+      let $cloneTemplate = d.importNode($template, true);
       const cardId = startIndex+index+1;
+
       $template.querySelector(".card").setAttribute("data-key", cardId);
 
       // FRONT CARD
-        $template.querySelector("img").setAttribute("src", work.img);
-        $template.querySelector("img").setAttribute("alt", work.title);
-        $template.querySelector("h3").textContent = work.title;
-        $template.querySelector("p").textContent = work.description;
-        $template.querySelector(".cardNumber").textContent = `${cardId}/${worksQuantity}`;
+        $cloneTemplate.querySelector("img").setAttribute("src", work.img);
+        $cloneTemplate.querySelector("img").setAttribute("alt", work.title);
+        $cloneTemplate.querySelector("h3").textContent = work.title;
+        $cloneTemplate.querySelector("p").textContent = work.description;
+        $cloneTemplate.querySelector(".cardNumber").textContent = `${cardId}/${worksQuantity}`;
 
       //   MODAL CARD
-        const $templateModal = $template.querySelector(".modal");
+        const $templateModal = $cloneTemplate.querySelector(".modal");
         $templateModal.querySelector("img").setAttribute("src", work.img);
         $templateModal.querySelector("img").setAttribute("data-src", work.gif);
         $templateModal.querySelector("img").setAttribute("alt", work.title);
@@ -90,8 +92,7 @@ import { works } from "./data.js";
         })
 
 
-        let $clone = d.importNode($template, true);
-        $fragment.appendChild($clone);
+        $fragment.appendChild($cloneTemplate);
       });
    
       $proyects.appendChild($fragment);

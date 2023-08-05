@@ -2,14 +2,15 @@
 :root {
 
   --first-color: rgb(208, 71,47);
+  --first-color-intense-1: rgb(167, 51, 38);
+  --first-color-intense-2: rgb(104, 11, 8);
   --first-color-smooth-1: rgb(255, 214, 201);
   --first-color-smooth-2: rgb(255, 171, 157);
   --first-color-smooth-3: rgb(255, 129, 114);
+  --first-color-smooth-4: rgb(238, 102, 86);
   --fisrt-alpha-color: rgba(208, 71,47,0.75);
   --second-color: rgb(70,61,178);
-  --second-alpha-color: rgba(70,61,178, 0.75);
-  --third-color: rgb(48, 41, 122);
-  --third-alpha-color: rgba(80, 20, 100, 0.75);
+  --second-color-3: rgb(50, 40, 78);
   --white-color: #fff;
   --gray-light-color: #f3f3f3;
   --gray-color: #ccc;
@@ -240,12 +241,17 @@ p {
   grid-template-columns: 60% 40%;
   width: 80%;
   height: 80%;
-  background-color: antiquewhite;
+  background-color: var(--second-color-3);
+  padding: 1rem;
+}
+
+.modal img {
+  height: 100%;
 }
 
 .modal-close {
   position: absolute;
-  top: 1rem;
+  top: 0.5rem;
   right: 1rem;
   cursor: pointer;
 }
@@ -256,6 +262,53 @@ p {
   fill: var(--first-color);
 }
 
+.modal h3 {
+  width: 80%;
+  border-bottom: 0.25rem solid var(--first-color);
+  color: var(--gray-light-color);
+}
+
+.modal button{
+  width: 80%;
+  background-color: var(--first-color-intense-1);
+  color: var(--gray-light-color);
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.modal-info{
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--gray-light-color);
+}
+
+.modal-info > p {
+  overflow-y: auto;
+  max-height: 155px;
+}
+
+.modalTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--first-color-intense-1);
+  border-radius: 0.5rem;
+  padding: 0.1rem;
+  max-height: 155px;
+  overflow-y: auto;
+}
+
+.modalTechnologies p {
+  padding: 0.25rem;
+  margin: 0.25rem 0.75rem 0.75rem 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--first-color-smooth-4);
+  font-weight: bold;
+  color: var(--gray-light-color);
+}
 
 
 
