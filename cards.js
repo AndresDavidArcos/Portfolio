@@ -80,6 +80,8 @@ import { works } from "./data.js";
         $templateModal.querySelector("img").setAttribute("alt", work.title);
         $templateModal.querySelector("h3").textContent = work.title;
         $templateModal.querySelector("p").textContent = work.description;
+        $templateModal.querySelector(".modalCode").setAttribute("href", work.codeRepository);
+        $templateModal.querySelector(".modalLive").setAttribute("href", work.liveVersion);
 
         const $technologies = $templateModal.querySelector(".modalTechnologies")
 

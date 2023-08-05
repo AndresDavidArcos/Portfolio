@@ -268,7 +268,7 @@ p {
   color: var(--gray-light-color);
 }
 
-.modal button{
+.modal a{
   width: 80%;
   background-color: var(--first-color-intense-1);
   color: var(--gray-light-color);
