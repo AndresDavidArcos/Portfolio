@@ -10,7 +10,9 @@
   --first-color-smooth-4: rgb(238, 102, 86);
   --fisrt-alpha-color: rgba(208, 71,47,0.75);
   --second-color: rgb(70,61,178);
+  --second-color-2: rgb(36,34,117);
   --second-color-3: rgb(50, 40, 78);
+  --second-color-4: rgb(46,52,138);
   --white-color: #fff;
   --gray-light-color: #f3f3f3;
   --gray-color: #ccc;
@@ -44,7 +46,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  color: var(--text-color);
+  color: var(--gray-light-color);
   padding-left: var(--nav-width);
 }
 
@@ -108,7 +110,7 @@ p {
 .menuLinks {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
@@ -363,8 +365,7 @@ p {
 
 .proyects {
   position: relative;
-  background-color: rgb(14,16,65)
-
+  background: linear-gradient(to bottom, rgb(13,16,59), rgb(21,25,91), rgb(38,37,112));
 }
 
 .proyectsContainer {
@@ -405,4 +406,91 @@ p {
   top: 50%;
 
 }
+
+.about {
+  background: linear-gradient(to bottom, rgb(6, 7, 44),rgb(7,7,69),rgb(5,7,68));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+
+.aboutInfo {
+  background-color:  var(--second-color-2);
+  height: 60%;
+  width: 100%;
+  position: relative;
+}
+
+.aboutMeCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: absolute;
+  top: -2rem;
+  width: 30%;
+  left: -2rem;
+  background-color: var(--second-color-2);
+  box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.5);
+
+}
+
+.aboutMeImg {
+  border: 0.75rem solid var(--first-color-smooth-4);
+  border-bottom: none;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.aboutMeImg > p{
+  padding: 0.25rem;
+  bottom: 0.4rem;
+  position: absolute;
+  background-color: var(--first-color-intense-2);
+  font-size: 0.90rem;
+}
+
+.aboutMeImg {
+  border: 0.75rem solid var(--first-color-intense-2);
+  border-bottom: none;
+  position: relative;
+  overflow-y: hidden;
+  height: 14rem;  
+}
+
+.aboutMeImg img{
+  object-position: center -2rem;
+}
+
+.aboutMeText {
+  height: 55%;
+  overflow-y: hidden;
+}
+
+.aboutMeText i{
+  font-weight: bold;
+}
+
+.aboutMeText h3 {
+  border-bottom: 0.25rem solid var(--first-color-intense-2);
+}
+
+.aboutMeText p{
+  font-size: 0.75rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
