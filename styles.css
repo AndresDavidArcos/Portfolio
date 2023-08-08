@@ -420,6 +420,7 @@ p {
   height: 60%;
   width: 100%;
   position: relative;
+  padding-left: 18rem;
 }
 
 .aboutMeCard {
@@ -478,6 +479,30 @@ p {
 .aboutMeText p{
   font-size: 0.75rem;
 }
+
+.aboutInfo h2 {
+  background-color: var(--second-color-4);
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+.aboutInfo > p, .aboutSkills {
+  font-size: 0.75rem;
+}
+
+.aboutSkills {
+  display: flex;
+}
+
+.aboutSkills > p{
+  padding: 1rem;
+  background-color: var(--second-color-4);
+  margin-right: 1rem;
+}
+
+
+
 
 
 
