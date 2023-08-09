@@ -471,12 +471,12 @@ p {
   padding: 0.25rem;
   bottom: 0.4rem;
   position: absolute;
-  background-color: var(--first-color-intense-2);
+  background-color: var(--first-color-intense-1);
   font-size: 0.90rem;
 }
 
 .aboutMeImg {
-  border: 0.75rem solid var(--first-color-intense-2);
+  border: 0.75rem solid var(--first-color-intense-1);
   border-bottom: none;
   position: relative;
   overflow-y: hidden;
@@ -497,7 +497,7 @@ p {
 }
 
 .aboutMeText h3 {
-  border-bottom: 0.25rem solid var(--first-color-intense-2);
+  border-bottom: 0.25rem solid var(--first-color-intense-1);
 }
 
 .aboutMeText p{
@@ -551,7 +551,6 @@ p {
 .aboutTechContainer > div{
   display: flex;
   flex-wrap: wrap;
-  /* border: 0.2rem solid var(--first-color-intense-1); */
   border-radius: 0.5rem;
   max-height: 5rem;
   margin-right: 1rem;
