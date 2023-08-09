@@ -658,6 +658,7 @@ select:-webkit-autofill:focus {
 .contactForm textarea {
   width: 90%;
   height: 70%;
+  resize: none;
 }
 
 .contactSendMail {
