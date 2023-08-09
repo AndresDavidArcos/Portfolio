@@ -319,6 +319,11 @@ p {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
 
+.disabledBtn {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .sideNav {
     width: var(--nav-width);
     height: 100vh;
@@ -589,10 +594,10 @@ p {
   margin-left: auto;
   margin-right: auto;
   background-color: var(--second-color);
-
+  box-shadow: 0.4rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
 
-.contactForm > *{
+.contactForm > input, .contactForm > textarea{
   background-color: var(--second-color);
   border: none;
   border-bottom: 0.1rem solid var(--first-color);
@@ -641,11 +646,51 @@ select:-webkit-autofill:focus {
   height: 70%;
 }
 
+.contactSendMail {
+  position: relative;
+}
+
 .contactForm button {
+  margin-top: 1rem;
   background-color: var(--first-color);
-  margin-top: 0.75rem;
+  color: var(--gray-light-color)
+}
+
+.contactFormLoader {
+  width: 4rem;
+  height: 4rem;
+  left: 13rem;
+  position: absolute;
 
 }
+
+.contactFormSuccess {
+  width: 4rem;
+  height: 4rem;
+  top: 0rem;
+  left: 13rem;
+  position: absolute;
+}
+
+.contactFormError {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 0rem;
+  left: 13rem;
+  color: red;    
+}
+
+.contactFormErrorDiv::after{
+  content: "Error al enviar el correo";
+  color: red;    
+  position: absolute;
+  font-weight: bold;
+  left: 17.25rem;
+  top: 0.75rem;
+  width: 10rem;
+}
+
 
 
 

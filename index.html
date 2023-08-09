@@ -6,7 +6,10 @@
     <title>Portafolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="succes.css"> 
+    <link rel="stylesheet" href="error.css">   
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
         <nav class="menu sideNav">
@@ -200,13 +203,44 @@
             </article>
             <form class="contactForm">
                     <input type="text" title="Nombre solo acepta letras y espacios en blanco" placeholder="Ingresa tu nombre *" name="name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"  required>
-                    <input type="email" title="Ingresa un correo valido" placeholder="Ingresa tu correo *" name="email" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"  required>
+                    <input type="email" title="Ingresa un correo valido" placeholder="Ingresa tu correo *" name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"  required>
                     <textarea name="comments"  placeholder="Déjame tus comentarios *" required></textarea>
-                    <button class="btn">ENVIAR MENSAJE</button>
+                    <div class="contactSendMail">
+                        <button class="btn contactFormSendBtn " type="submit">ENVIAR MENSAJE</button>
+                        <svg class="whole elementHidden contactFormLoader" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="loader">
+                              <animateTransform 
+                                     xlink:href="#loader"
+                                     attributeName="transform" 
+                                     attributeType="XML"
+                                     type="rotate"
+                                     from="0 50 50"
+                                     to="360 50 50" 
+                                     dur="1s"
+                                     begin="0s"
+                                     repeatCount="indefinite"
+                                     restart="always" 
+                                     />
+                              <path class="a" opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM50 90C72.0914 90 90 72.0914 90 50C90 27.9086 72.0914 10 50 10C27.9086 10 10 27.9086 10 50C10 72.0914 27.9086 90 50 90Z" fill="#66B1DC"/>
+                              <path class="b" fill-rule="evenodd" clip-rule="evenodd" d="M100 50C100 22.3858 77.6142 0 50 0V10C72.0914 10 90 27.9086 90 50H100Z" fill="rgb(208, 71,47)"/>
+                              </g>
+                        </svg>
+                        <div class="success-animation  contactFormSuccess none ">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
+                        </div>
+                        <div class="contactFormErrorDiv none">
+                            <svg class="contactFormError" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+                        </div>
+                            
+                            
+                    </div>
+
             </form>
             </article>
         </section>
 <script src="data.js" type="module"></script>        
-<script src="cards.js" type="module"></script>        
+<script src="cards.js" type="module"></script>    
+<script src="form.js" type="module"></script>        
+
 </body>
 </html>
