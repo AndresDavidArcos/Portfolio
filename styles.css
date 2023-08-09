@@ -110,9 +110,11 @@ p {
 .menuLinks {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-}
+    height: 100%;
+    transition: width 0.5s ease-out;
+  }
 
 .menuLinks a {
     padding: 1rem;
@@ -125,13 +127,26 @@ p {
 
   }
 
+.menuLinkObserved {
+  background-color: var(--first-color-intense-1);
+  transform: scale(115%,115%); 
+}
+
 .menuIcons {
     background-color: var(--gray-light-color);
+    height: 30%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    position: relative;
 }
 
 .menuIcons svg {
-  color: var(--black-color);
-
+  fill: var(--gray-light-color);
+  stroke: var(--first-color-intense-1);
+  position: absolute;
+  transition: opacity 0.7s ease-out;
 }
 
 /* Home */
