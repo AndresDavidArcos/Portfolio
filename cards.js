@@ -22,10 +22,10 @@ import { works } from "./data.js";
 
    if($parent.matches(".proyectsCard") && e.target.matches(".proyectsExploreBtn")){
       let $modal = $parent.nextElementSibling;
-      let $gif = $modal.querySelector("img");
-      const gifUrl = $gif.getAttribute("data-src");
-      if (gifUrl != "undefined") {
-         $gif.setAttribute("src", gifUrl);
+      let $video = $modal.querySelector("video");
+      const videoSrc = $video.getAttribute("data-src");
+      if (videoSrc != "undefined") {
+         $video.setAttribute("src", videoSrc);
        }
        
       $modal.classList.remove("elementHidden");
@@ -75,9 +75,7 @@ import { works } from "./data.js";
 
       //   MODAL CARD
         const $templateModal = $cloneTemplate.querySelector(".modal");
-        $templateModal.querySelector("img").setAttribute("src", work.img);
-        $templateModal.querySelector("img").setAttribute("data-src", work.gif);
-        $templateModal.querySelector("img").setAttribute("alt", work.title);
+        $templateModal.querySelector("video").setAttribute("data-src", work.video);
         $templateModal.querySelector("h3").textContent = work.title;
         $templateModal.querySelector("p").textContent = work.description;
         $templateModal.querySelector(".modalCode").setAttribute("href", work.codeRepository);
