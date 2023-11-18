@@ -8,7 +8,7 @@
     d.addEventListener("submit", e => {
             e.preventDefault();
 
-            $loader.classList.remove("elementHidden");
+            $loader.classList.remove("none");
             $sendBtn.classList.add("disabledBtn");
             fetch("https://formsubmit.co/ajax/andretitauro@gmail.com", {
                 method: "POST",
@@ -18,7 +18,7 @@
               .then(json => {
                 console.log(json);
                 $form.reset();
-                $loader.classList.add("elementHidden")
+                $loader.classList.add("none")
                 $success.classList.remove("none")
                 setTimeout(()=>{
                     $success.classList.add("none")
@@ -26,7 +26,7 @@
               })
               .catch(err => {
                 console.log(err);
-                 $loader.classList.add("elementHidden")
+                 $loader.classList.add("none")
                 $error.classList.remove("none")
                 setTimeout(()=>{
                     $error.classList.add("none")

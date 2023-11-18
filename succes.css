@@ -2,8 +2,8 @@
     content: "Correo enviado con exito!";
     color: #4bb71b;    
     position: absolute;
-    left: 4.25rem;
-    top: 0.75rem;
+    left: 120%;
+    bottom: 12%;
     width: 10rem;
 }
 
@@ -18,7 +18,7 @@
 .checkmark__circle {
     stroke-dasharray: 166;
     stroke-dashoffset: 166;
-    stroke-width: 2;
+    stroke-width: 1;
     stroke-miterlimit: 10;
     stroke: #4bb71b;
     fill: rgb(70,61,178);
