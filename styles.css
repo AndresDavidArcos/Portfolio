@@ -434,7 +434,7 @@ p {
     align-items: center;
     grid-template-columns: 60% 40%;
     width: 80%;
-    height: 90%;
+    height: auto;
     background-color: var(--second-color-3);
     padding: 1rem;
 }
@@ -486,7 +486,7 @@ p {
     margin-left: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     color: var(--gray-light-color);
 }
 
