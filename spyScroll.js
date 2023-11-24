@@ -13,7 +13,7 @@
         })
 
     }, {
-        threshold: 0.6
+        threshold: 0.5
     })
 
     $mainSections.forEach(section => {
